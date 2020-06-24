@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="sub-service" class="com.gigaspaces.demo6_xml_inject_explicit.MySubService"/>
+
+    <bean class="com.gigaspaces.demo6_xml_inject_explicit.Service1">
+        <constructor-arg ref="sub-service"/>
+    </bean>
+
+    <bean class="com.gigaspaces.demo6_xml_inject_explicit.Service2">
+        <property name="subService" ref="sub-service"/>
+    </bean>
+
+</beans>
